@@ -13,6 +13,26 @@ jobs:
       with:
         flutter-version: '3.16.9'
     - run: flutter pub get
+    - name: Bump version and create tag
+      run: |
+          # Extract current version from pubspec.yaml
+          current_version=$(grep version: pubspec.yaml | awk '{print $2}' | sed 's/\"//g')
+
+          # Bump version (you can use your versioning strategy)
+          new_version=$(flutter pub bump)
+
+          # Commit the updated version
+          git config user.name "Kashisk2"
+          git config user.email "kashiramshekhda2010@gmail.com"
+          git add pubspec.yaml
+          git commit -m "Bump version to $new_version"
+
+          # Create and push the tag
+          git tag -a "$new_version" -m "Release $new_version"
+          git push origin "$new_version"
+
+          echo "New version: $new_version"
+          
     - run: flutter test
     - run: flutter build apk --release
     - name: Push APK to Releases
