@@ -15,4 +15,24 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.9'
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: app-release
+          path: build/app/outputs/flutter-apk/
+
       # Add deployment steps here
+      # For example, you might deploy to a server or distribute the APK
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Display Download Link
+        run: |
+         echo "Download the APK here: ${{ needs.deploy.outputs.artifacts_url }}"
