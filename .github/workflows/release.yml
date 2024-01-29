@@ -16,7 +16,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '<flutter_version>'
+          flutter-version: "3.16.9"
 
       - name: Install dependencies
         run: flutter pub get
@@ -27,7 +27,7 @@ jobs:
       - name: Upload Release Asset
         uses: actions/upload-artifact@v2
         with:
-          name: app-release-android
+          name: app-release
           path: build/app/outputs/flutter-apk/
 
   release_ios:
@@ -40,7 +40,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.16.9'
+          flutter-version: "3.16.9"
 
       - name: Install dependencies
         run: flutter pub get
@@ -51,7 +51,7 @@ jobs:
       - name: Upload Release Asset
         uses: actions/upload-artifact@v2
         with:
-          name: app-release-ios
+          name: app-release
           path: build/ios/iphoneos/
 
   merge_assets:
@@ -66,5 +66,5 @@ jobs:
         with:
           name: app-release
           path: |
-            release_android/app-release-android/*
-            release_ios/app-release-ios/*
+            release_android/app-release/*
+            release_ios/app-release/*
