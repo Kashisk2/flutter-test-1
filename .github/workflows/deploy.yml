@@ -1,0 +1,18 @@
+name: Deploy
+
+on:
+  workflow_run:
+    workflows:
+      - "Build and Test"
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Add deployment steps here
