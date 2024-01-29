@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Bump version and create tag
+            - name: Bump version and create tag
         run: |
           # Extract current version from pubspec.yaml
           current_version=$(grep version: pubspec.yaml | awk '{print $2}' | sed 's/\"//g')
@@ -38,9 +38,12 @@ jobs:
           git add pubspec.yaml
           git commit -m "Bump version to $new_version"
 
+          # Replace spaces with dots in the version number
+          tag_version=$(echo "$new_version" | tr -d ' ')
+
           # Create and push the tag
-          git tag -a "$new_version" -m "Release $new_version"
-          git push origin "$new_version"
+          git tag -a "$tag_version" -m "Release $tag_version"
+          git push origin "$tag_version"
 
           echo "New version: $new_version"
 
