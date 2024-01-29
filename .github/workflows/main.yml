@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-            - name: Bump version and create tag
+      - name: Bump version and create tag
         run: |
           # Extract current version from pubspec.yaml
           current_version=$(grep version: pubspec.yaml | awk '{print $2}' | sed 's/\"//g')
