@@ -45,7 +45,7 @@ jobs:
       continue-on-error: true
 
     - name: Build IPA for iOS
-      run: flutter build ios --release
+      run: flutter build ios
     
     # Upload generated apk to the artifacts.
     - name: Archive artifacts
