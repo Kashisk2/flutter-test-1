@@ -40,18 +40,10 @@ jobs:
     - run: flutter test
     
     # Build apk.
-    - name: Build APK for Android
-      run: flutter build apk
-      continue-on-error: true
-
-    - name: Build IPA for iOS
-      run: flutter build ios
+    - run: flutter build apk
     
     # Upload generated apk to the artifacts.
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v1
       with:
-        name: build-artifacts
-        path: |
-          build/app/outputs/flutter-apk/app-release.apk
-          build/ios/iphoneos/Runner.app
+        name: release-apk
+        path: build/app/outputs/flutter-apk/app-release.apk
