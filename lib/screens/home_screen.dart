@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
         builder: (BuildContext context, int value, _) {
           return pages[value];
         },
-      ), 
+      ),
       bottomNavigationBar: _BottomNavigationBar(
         onItemSelected: _onNavigationItemSelected,
       ),
