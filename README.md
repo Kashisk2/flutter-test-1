@@ -1,31 +1,33 @@
-# flutter_application_1
+# Chatter
 
-A new Flutter project.
+[![Episode 01 Design and UI](https://img.youtube.com/vi/vgqBc7jni8c/0.jpg)](https://www.youtube.com/watch?v=vgqBc7jni8c)
 
-## Getting Started
+Video link: https://www.youtube.com/watch?v=vgqBc7jni8c
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+## Tutorial 01 - Create the UI and Structure for the Application
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This branch is the final code for tutorial 01. In this tutorial we added the UI and code structure for our application.
 
-## Assets
+Clone this repository:
 
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
+```bash
+git clone https://github.com/HayesGordon/chatter.git
+```
 
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
+And then checkout this branch:
 
-## Localization
+```bash
+git checkout tutorial-001-base-ui-complete
+```
 
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
+### Starting Code
 
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
-# flutter-test-1
+If you want the entry code for this tutorial, you can find it here:
+
+https://github.com/HayesGordon/chatter/tree/tutorial-001-base-ui
+
+Checkout instructions:
+
+```bash
+git checkout tutorial-001-base-ui
+```
